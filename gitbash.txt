@@ -1,0 +1,13 @@
+Ubuntu (Native Environment): When running on a native Linux environment, bash and other related utilities are running directly on the operating system, making full use of the system's resources without any additional overhead.
+
+Git Bash on Windows (Emulation): Git Bash provides a minimal set of Unix-like tools on Windows. However, it runs within a Windows environment, which introduces a layer of emulation or compatibility. This adds overhead and can significantly impact performance.
+
+Linux Filesystem: Linux filesystems (like ext4, XFS, etc.) are optimized for Unix-like operations. They handle file I/O operations very efficiently, especially for tasks common in shell scripts like file creation, deletion, and modification.
+
+Windows Filesystem (NTFS): When running Git Bash, the scripts interact with the Windows NTFS filesystem, which is not optimized for Unix-like operations. This can slow down file I/O operations.
+
+Linux Network Stack: Linux has a very efficient and optimized network stack, which can be a significant factor if your script makes network calls.
+Git Bash Compatibility Layer: Git Bash uses tools like MSYS2 or Cygwin to provide Unix-like functionality on Windows. These tools introduce a compatibility layer that translates Unix system calls to Windows system calls. This translation adds overhead and can slow down script execution.
+Linux I/O Performance: Direct access to hardware and efficient I/O buffering in Linux contributes to faster execution of scripts involving heavy I/O operations.
+
+Windows I/O Performance in Git Bash: The I/O performance in Git Bash can be slower due to the additional layers of abstraction and the differences in how Windows handles I/O operations.
